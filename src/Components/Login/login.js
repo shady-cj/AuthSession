@@ -20,31 +20,25 @@ const Login = () => {
                     (user) =>
                         user.username.toLowerCase() === username.toLowerCase()
                 );
-                // sessionStorage.setItem("activeUser", userSession.username);
                 if (userSession) {
-                    if (userSession.isActive) {
-                        let a = window.open("http://localhost:3000", username);
-                        a.focus();
-                    } else {
-                        window.name = username;
-                        account.map((user) => {
-                            if (
-                                user.username.toLowerCase() ===
-                                username.toLowerCase()
-                            ) {
-                                user.isActive = true;
-                                user.lastLogin = new Date().getTime();
-                                user.status = "active";
-                            }
-                            return user;
-                        });
-                        localStorage.setItem(
-                            "session-auth",
-                            JSON.stringify(account)
-                        );
+                    window.name = username;
+                    account.map((user) => {
+                        if (
+                            user.username.toLowerCase() ===
+                            username.toLowerCase()
+                        ) {
+                            user.isActive = true;
+                            user.lastLogin = new Date().getTime();
+                            user.status = "active";
+                        }
+                        return user;
+                    });
+                    localStorage.setItem(
+                        "session-auth",
+                        JSON.stringify(account)
+                    );
 
-                        navigate("/");
-                    }
+                    navigate("/");
                 } else {
                     account.push({
                         username: username,
@@ -61,7 +55,6 @@ const Login = () => {
                     navigate("/");
                 }
             } else {
-                // sessionStorage.setItem("activeUser", username);
                 const newAccount = [];
                 newAccount.push({
                     username: username,

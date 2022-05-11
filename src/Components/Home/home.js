@@ -45,38 +45,40 @@ const Home = () => {
     // useEffect(() => {
     //     const handleUnload = (e) => {
     //         // e.preventDefault();
-    //         const getReloaded = sessionStorage.getItem("reloaded");
-    //         let pageReloaded = window.performance
-    //             .getEntriesByType("navigation")
-    //             .map((nav) => nav.type);
+    //         const getSession = sessionStorage.getItem("inSession");
+    //         localStorage.setItem("checkSession", getSession);
+    //         console.log(getSession);
+    //         // let pageReloaded = window.performance
+    //         //     .getEntriesByType("navigation")
+    //         //     .map((nav) => nav.type);
 
-    //         console.log(pageReloaded);
-    //         console.log(pageReloaded.includes("reload"));
-    //         if (getReloaded) {
-    //             if (pageReloaded.includes("reload") === false) {
-    //                 localStorage.setItem("test", "set");
-    //                 const updatedStorage = users.map((user) => {
-    //                     if (user.username === activeUser.username) {
-    //                         user.isActive = false;
-    //                         user.status = "inactive";
-    //                     }
-    //                     return user;
-    //                 });
-    //                 localStorage.setItem(
-    //                     "gone",
-    //                     JSON.stringify(updatedStorage)
-    //                 );
+    //         // console.log(pageReloaded);
+    //         // console.log(pageReloaded.includes("reload"));
+    //         // if (getReloaded) {
+    //         //     if (pageReloaded.includes("reload") === false) {
+    //         //         localStorage.setItem("test", "set");
+    //         //         const updatedStorage = users.map((user) => {
+    //         //             if (user.username === activeUser.username) {
+    //         //                 user.isActive = false;
+    //         //                 user.status = "inactive";
+    //         //             }
+    //         //             return user;
+    //         //         });
+    //         //         localStorage.setItem(
+    //         //             "gone",
+    //         //             JSON.stringify(updatedStorage)
+    //         //         );
 
-    //                 localStorage.setItem(
-    //                     "session-auth",
-    //                     JSON.stringify(updatedStorage)
-    //                 );
-    //             } else {
-    //                 localStorage.setItem("test", pageReloaded);
-    //             }
-    //         } else {
-    //             sessionStorage.setItem("reloaded", true);
-    //         }
+    //         //         localStorage.setItem(
+    //         //             "session-auth",
+    //         //             JSON.stringify(updatedStorage)
+    //         //         );
+    //         //     } else {
+    //         //         localStorage.setItem("test", pageReloaded);
+    //         //     }
+    //         // } else {
+    //         //     sessionStorage.setItem("reloaded", true);
+    //         // }
 
     //         // console.log("closing now ");
     //         // return "Take care and bye bye";
@@ -188,7 +190,6 @@ const Home = () => {
         const handleStorageChange = (e) => {
             if (e.key === "session-auth") {
                 const newState = JSON.parse(e.newValue);
-                console.log(e);
 
                 setUsers(newState);
                 if (activeUser) {
