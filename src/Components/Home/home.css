@@ -1,0 +1,94 @@
+.user-main {
+    width: 90%;
+    height: 90%;
+    display: flex;
+    justify-content: space-around;
+    padding: 2rem 0;
+}
+
+.active-user {
+    margin: 5rem;
+}
+
+.active-user h2 {
+    font-size: 2rem;
+}
+.active-user p {
+    color: var(--main-color);
+    margin: 0.2rem 0;
+    margin-top: 0.5rem;
+}
+.active-user p span {
+    margin-right: 0.5rem;
+}
+.active-user button {
+    margin-top: 1rem;
+    border: 1px solid var(--main-color);
+    background-color: white;
+    color: var(--main-color);
+    padding: 0.5rem 2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease-in;
+}
+
+.session-logout {
+    padding: 0.15rem 0.25rem;
+    border: 1px solid var(--main-color);
+    background-color: white;
+    color: var(--main-color);
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s ease-in;
+}
+.active-user button:hover,
+.session-logout:hover {
+    background-color: rgba(48, 206, 139, 0.2);
+}
+.active-user button:last-child:hover {
+    background-color: rgba(255, 0, 0, 0.2);
+}
+
+.session-users p {
+    margin: 0.6rem 0;
+    color: var(--primary-color);
+}
+
+@media screen and (max-width: 768px) {
+    .user-main {
+        width: 100%;
+        padding: 1rem;
+        justify-content: space-between;
+    }
+    .active-user {
+        margin: 2rem;
+        margin-top: 5rem;
+    }
+    .active-user h2 {
+        font-size: 1.6rem;
+    }
+    .active-user p span {
+        font-size: 0.9rem !important;
+    }
+    .session-users p {
+        font-size: 0.7rem;
+    }
+    .session-users h2 {
+        font-size: 1rem;
+    }
+    .session-logout {
+        padding: 0.1rem 0.2rem;
+    }
+    .active-user button {
+        padding: 0.2rem 0.8rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .active-user h2 {
+        font-size: 1.3rem;
+    }
+    .active-user button {
+        padding: 0.2rem 0.5rem;
+    }
+}
